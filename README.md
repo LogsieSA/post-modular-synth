@@ -16,13 +16,14 @@ To make one of your own post modular synths, you will need:
 6. A few keyboards.
 7. A screen.
 8. Cables to connect the node to the mixer.
+
 OPTIONAL BUT ENCOURAGED:
-9. A network interface card that supports PTP to some extent.
-10. An audio interface, PCs send out a -10dBV signal, a mixer normally expects +4dBV. You *can* turn the gain up everywhere, but it leaves you with a faint white noise.
-11. A spare GPU for the drum machine/master.
-12. Good cooling, heat introduces jitter.
-13. If you are a bit overkill, a PS/2 keyboard for the drums.
-14. A MIDI keyboard for more complex synthesizers.
+10. A network interface card that supports PTP to some extent.
+11. An audio interface, PCs send out a -10dBV signal, a mixer normally expects +4dBV. You *can* turn the gain up everywhere, but it leaves you with a faint white noise.
+12. A spare GPU for the drum machine/master.
+13. Good cooling, heat introduces jitter.
+14. If you are a bit overkill, a PS/2 keyboard for the drums.
+15. A MIDI keyboard for more complex synthesizers.
 
 After you have all of that, configure the BIOS as follows:
 1. Turn off virtualization.
