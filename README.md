@@ -18,6 +18,8 @@ To make one of your own post modular synths, you will need:
 8. Cables to connect the node to the mixer.
 
 OPTIONAL BUT ENCOURAGED:
+
+9. A server rack to mount it all.
 10. A network interface card that supports PTP to some extent.
 11. An audio interface, PCs send out a -10dBV signal, a mixer normally expects +4dBV. You *can* turn the gain up everywhere, but it leaves you with a faint white noise.
 12. A spare GPU for the drum machine/master.
