@@ -1,6 +1,9 @@
 # The Post Modular Synth
 A fault-tolerant, digital, Beowulf cluster designed to emulate the functions of a modular synth. Designed with live use in mind, this project rejects most single point of failures, if a node fails, the system continues as if nothing had happened, it fails gracefully, just leaving the overall song/performance with one less instrument until it gets fixed, rebooted and restarted.
 
+This diagram depicts a basic 6 node set-up with maximum performance, minimal redundancy. Audio outputs are represented by green, audio inputs are represented by blue, networking cables by the yellow/gold, data by the black.
+
+
 ![A basic, RAID-0 esque 6 node set-up.](https://github.com/LogsieSA/post-modular-synth/blob/main/Post-modular-diagram.png)
 
 # "Quick" start guide.
