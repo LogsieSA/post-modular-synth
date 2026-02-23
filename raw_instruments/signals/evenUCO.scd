@@ -1,6 +1,5 @@
 s.boot;
 // #IHateMyDAW :)
-// UCO with 4 different mixable signals (Sine, Saw, Triangle, Square), ring modulation and a small, built in FX bank.
 (SynthDef(\uco, {
 	arg mFreq=110,
 	sFreq=220,
@@ -27,19 +26,24 @@ s.boot;
 	bits=24,
 	res=0.1,
 	type=0.0,
-	noise=0.0003
-	;
-	var modu, carr, fOut, fxBank, fxOut;
-	modu = (SinOsc.ar(sFreq) * dex);
+	noise=0.0003,
+	moduSelection=0;
+	var carr, fOut, fxBank, fxOut, moduInArray, modu;
+
+	moduInArray = [
+		SinOsc.ar(sFreq) * dex, //0: Modulation internally
+		SoundIn.ar(0) * dex //1: Modulation via SoundIn.ar
+	              ];
+	modu = Select.ar(moduSelection, moduInArray);
 	carr = (SinOsc.ar(mFreq + modu) * siAmp) + (Saw.ar(mFreq + modu) * saAmp) + (LFTri.ar(mFreq + modu) * trAmp) + (PulseDPW.ar(mFreq + modu) * sqAmp);
 	fxBank = [
-		carr = carr, //index 0 (passthrough)
-		FreeVerb.ar(carr, mix, room, damp), //index 1
-		MoogFF.ar(carr, fxFreq, gain), //index 2
-		CombC.ar(carr, maxDelay, delayTime, decayTime), //index 3
-		Greyhole.ar(carr, delayTime, damp, room, diff, feedback, depth, modFreqFX), //index 4
-		Decimator.ar(carr, rate, bits), //index 5
-		DFM1.ar(carr, fxFreq, res, gain, type, noise) //index 6
+		carr = carr, //0: None (Pass-through)
+		FreeVerb.ar(carr, mix, room, damp), //1: reverb
+		MoogFF.ar(carr, fxFreq, gain), //2: Moog Ladder filter
+		CombC.ar(carr, maxDelay, delayTime, decayTime), //3: Cubic Comb filter
+		Greyhole.ar(carr, delayTime, damp, room, diff, feedback, depth, modFreqFX), //4: Huge reverb
+		Decimator.ar(carr, rate, bits), //5: Bit Crush
+		DFM1.ar(carr, fxFreq, res, gain, type, noise) //6: Analog filter
 	];
 
 	fxOut = Select.ar(fX, fxBank);
@@ -65,29 +69,6 @@ x.set(\sFreq, 90,
 	\siAmp,1,
 	\saAmp,0.4,
 	\trAmp,1,
-	\sqAmp,0.4);
+	\sqAmp,0.4,
+	\moduSelection,0);
 x.free;
-y = Synth(\uco);
-y.set(\siAmp, 0.5,
-	\trAmp,0.5,
-	\sqAmp, 0.9,
-	\saAmp, 0.9,
-	\dex, 10,
-	\fX, 0,
-	\room, 0.9,
-	\res, 0.5,
-	\bits, 24,
-	\mFreq, 150,
-	\sFreq, 60*2);
-y.free;
-
-z = Synth(\uco);
-z.set(\siAmp, 1,
-	\trAmp,1,
-	\sqAmp, 0.9,
-	\saAmp, 0.9,
-	\dex, 5,
-	\resFreq, 200,
-	\mFreq, 150,
-	\sFreq, 5);
-z.free;
