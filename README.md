@@ -4,7 +4,7 @@ A fault-tolerant, digital, Beowulf cluster designed to emulate the functions of 
 This diagram depicts a basic 6 node set-up with maximum performance, minimal redundancy. Audio outputs are represented by green, audio inputs are represented by blue, networking cables by the yellow/gold, data by the black.
 
 
-![A basic, RAID-0 esque 6 node set-up.](https://github.com/LogsieSA/post-modular-synth/blob/main/Post-modular-diagram.png)
+![A basic 6 node set-up.](https://github.com/LogsieSA/post-modular-synth/blob/main/Post-modular-diagram.png)
 
 # "Quick" start guide.
 To make one of your own post modular synths, you will need:
