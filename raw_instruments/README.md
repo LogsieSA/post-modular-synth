@@ -9,3 +9,6 @@ I will keep the structure simple, each directory within this one will have lable
 4. The "FX" directory will have SuperCollider files that only have sound effects built in, they exclusively use the ```SoundIn.ar``` Ugen as the "in" signal.
 
 More to come!
+
+# Note:
+If you find any errors such as class/Ugen not found, please install sc3-plugins and/or ![mi-Ugens](https://github.com/v7b1/mi-UGens).
