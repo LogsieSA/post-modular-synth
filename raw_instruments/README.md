@@ -1,5 +1,5 @@
 # Navigation;
-In this directory you will find the raw ```.scd``` files.
+In this directory you will find my raw ```.scd``` files.
 
 # The structure;
 I will keep the structure simple, each directory within this one will have labled folders with what you can expect to find in them.
