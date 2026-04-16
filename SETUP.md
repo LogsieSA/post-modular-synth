@@ -24,4 +24,5 @@
 4. Run the command:
    ```sudo apt install scide sc3-plugins linux-image-rt-amd64 linux-headers-rt-amd64 jackd2 alsa-utils git rtirq-init```
 5. Set your IP address to static, ```sudo nano /etc/networks/interfaces```.
-6. Reboot.
+6. Install ![mi-Ugens](https://github.com/v7b1/mi-UGens).
+7. Reboot.
